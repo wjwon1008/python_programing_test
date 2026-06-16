@@ -71,7 +71,7 @@ with tab3:
         subject = SUBJECTS[i]
         with cols[i]:
             st.subheader(subject)
-            st.write("평균: " + str(subject_average(students, subject))
+            st.write("평균: " + str(subject_average(students, subject)))
             st.write(f"최고: {subject_top(students, subject)}")
 
     chart_data = []
