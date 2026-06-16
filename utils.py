@@ -73,25 +73,3 @@ def pass_rate(students, cutoff=60):
             count += 1
     return count / len(students) * 100
 
-import os
-import json
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_FILE = os.path.join(BASE_DIR, "students.json")
-
-def load_students():
-    """저장된 학생 정보 파일(students.json)을 로드하며, 파일이 없으면 기본 데이터를 반환합니다."""
-    if os.path.exists(DB_FILE):
-        try:
-            with open(DB_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            return DEFAULT_STUDENTS
-    return DEFAULT_STUDENTS
-
-def save_students(students):
-    """학생 정보를 파일(students.json)에 저장합니다."""
-    try:
-        with open(DB_FILE, "w", encoding="utf-8") as f:
-            json.dump(students, f, ensure_ascii=False, indent=4)
-    except Exception as e:
-        print(f"Error saving students: {e}")
