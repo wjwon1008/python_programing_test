@@ -39,7 +39,7 @@ def subject_average(students, subject):
     total = 0
     for stu in students:
         total += stu[subject]
-    return total / 3
+    return total / len(students)
 
 
 def subject_top(students, subject):
