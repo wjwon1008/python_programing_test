@@ -72,3 +72,13 @@ def pass_rate(students, cutoff=60):
         if average_score(stu) >= cutoff:
             count += 1
     return count / len(students) * 100
+    
+def load_students():
+    """저장된 학생 정보 파일(students.json)을 로드하며, 파일이 없으면 기본 데이터를 반환합니다."""
+    if os.path.exists(DB_FILE):
+        try:
+            with open(DB_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return DEFAULT_STUDENTS
+    return DEFAULT_STUDENTS
