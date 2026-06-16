@@ -87,3 +87,11 @@ def load_students():
         except Exception:
             return DEFAULT_STUDENTS
     return DEFAULT_STUDENTS
+
+def save_students(students):
+    """학생 정보를 파일(students.json)에 저장합니다."""
+    try:
+        with open(DB_FILE, "w", encoding="utf-8") as f:
+            json.dump(students, f, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"Error saving students: {e}")
