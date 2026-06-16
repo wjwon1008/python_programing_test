@@ -33,7 +33,7 @@ with tab1:
     kor = st.number_input("국어", 0, 100, 0)
     eng = st.number_input("영어", 0, 100, 0)
     mat = st.number_input("수학", 0, 100, 0)
-    if st.button("추가")
+    if st.button("추가"):
         students.append({"이름": name, "국어": kor, "영어": eng, "수학": mat})
         st.success(f"{name} 학생을 추가했습니다.")
 
