@@ -75,7 +75,9 @@ def pass_rate(students, cutoff=60):
 
 import os
 import json
-DB_FILE = "students.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_FILE = os.path.join(BASE_DIR, "students.json")
+
 def load_students():
     """저장된 학생 정보 파일(students.json)을 로드하며, 파일이 없으면 기본 데이터를 반환합니다."""
     if os.path.exists(DB_FILE):
