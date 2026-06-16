@@ -91,6 +91,6 @@ with tab4:
     st.table(rank_table)
 
     st.header("학점 분포")
-    dist = grade_distribution(studets)
+    dist = grade_distribution(students)
     dist_data = [{"학점": g, "인원": dist[g]} for g in ["A", "B", "C", "D", "F"]]
     st.bar_chart(dist_data, x="학점", y="인원", horizontal=True, height=400)
