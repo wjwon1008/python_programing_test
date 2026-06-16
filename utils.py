@@ -12,7 +12,7 @@ def total_score(student):
 
 def average_score(student):
     """학생의 평균."""
-    return total_score(student) / len(student)
+    return total_score(student) / 3
 
 
 def to_grade(avg):
@@ -39,7 +39,7 @@ def subject_average(students, subject):
     total = 0
     for stu in students:
         total += stu[subject]
-    return total / len(students)
+    return total / 3
 
 
 def subject_top(students, subject):
