@@ -62,7 +62,7 @@ def grade_distribution(students):
 
 def rank_list(students):
     """총점 기준 정렬."""
-    return sorted(students, key=lambda s: total_score(s))
+    return sorted(students, key=lambda s: total_score(s), reverse=True)
 
 
 def pass_rate(students, cutoff=60):
